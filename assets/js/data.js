@@ -1,4 +1,3 @@
-
 export const interiors = [
     { id: 1, name: "Vacant Consort" },
     { id: 2, name: "The Obsessed Misty" },
