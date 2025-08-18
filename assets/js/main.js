@@ -1,5 +1,4 @@
-
-import { interiors } from "./data.js";
+import { itemsData } from "./data.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const cursor = document.querySelector(".cursor");
@@ -15,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         item.className = "item";
         const p = document.createElement("p");
         const count = document.createElement("span");
-        p.textContent = interiors[i].name;
+        p.textContent = itemsData[i].name;
         count.textContent = `(${Math.floor(Math.random() * 50) + 1})`;
 
         item.appendChild(p);
@@ -28,9 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const rotation = (angle * 180) / Math.PI;
 
         gsap.set(item, {
-            x: x + 'px',
-            y: y + 'px',
-            rotation: rotation
+            x: x + "px",
+            y: y + "px",
+            rotation: rotation,
         }); //here can show1
 
         item.addEventListener("mouseover", function () {
@@ -43,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
             gsap.to(img, {
                 clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
                 duration: 1,
-                ease: "power3.out"
+                ease: "power3.out",
             });
         }); //here can show2
 
@@ -63,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 setTimeout(() => {
                                     img.remove();
                                 }, 1000);
-                            }
+                            },
                         });
                     }
                 });
@@ -72,12 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
                     duration: 1,
                     ease: "power3.out",
-                    delay: 0.25
+                    delay: 0.25,
                 });
             }
         }); //here can show3
     }
-
 
     function updatePosition() {
         const scrollAmount = window.scrollY * 0.0005;
@@ -90,10 +88,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             gsap.to(item, {
                 duration: 0.05,
-                x: x + 'px',
-                y: y + 'px',
+                x: x + "px",
+                y: y + "px",
                 rotation: rotation,
-                ease: "elastic.out(1, 0.3)"
+                ease: "elastic.out(1, 0.3)",
             });
         });
     }
@@ -101,15 +99,12 @@ document.addEventListener("DOMContentLoaded", function () {
     updatePosition();
     document.addEventListener("scroll", updatePosition); //here can show4
 
-
     document.addEventListener("mousemove", function (e) {
         gsap.to(cursor, {
             x: e.clientX - 150,
             y: e.clientY - 200,
             duration: 1,
-            ease: "power3.out"
+            ease: "power3.out",
         });
     });
 });
-
-

@@ -1,4 +1,4 @@
-export const interiors = [
+export const itemsData = [
     { id: 1, name: "Vacant Consort" },
     { id: 2, name: "The Obsessed Misty" },
     { id: 3, name: "Mist of Sons" },
@@ -58,7 +58,5 @@ export const interiors = [
     { id: 57, name: "Crying in the Mist" },
     { id: 58, name: "Frozen Flying" },
     { id: 59, name: "Night of Dragon" },
-    { id: 60, name: "The Visions's Tales" }
+    { id: 60, name: "The Visions's Tales" },
 ];
-
-
